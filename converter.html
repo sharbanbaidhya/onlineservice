@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: black;
+  
+  }
+  h3{
+    color: aliceblue;
+  }
+  p{
+    color: aliceblue;
+  }
+  marquee{
+    background-color: black;
+    width: 400px;
+    
+    color: aliceblue;
+    font-size: 60px;
+  }
+</style>
+<body>
+  <marquee> Converter </marquee>
+    <script>
+    /* When the input field receives input, convert the value from pounds to kilograms */
+function weightConverter(valNum) {
+  document.getElementById("outputGrams").innerHTML = valNum / 0.0022046;
+}
+</script>
+<h3> convert pound into Grams</h3>
+<p>
+  <label>Pounds</label>
+  <input id="inputPounds" type="number" placeholder="Pounds"
+  oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
+</p>
+<p>Grams: <span id="outputGrams"></span></p>
+<script>
+    /* When the input field receives input, convert the value from fahrenheit to celsius */
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+}
+</script>
+<h3> convert fahrenheit into celsius</h3>
+<p>
+    <label>Fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+    oninput="temperatureConverter(this.value)"
+    onchange="temperatureConverter(this.value)">
+  </p>
+  <p>Celsius: <span id="outputCelsius"></span></p>
+  <script>
+      /* When the input field receives input, convert the value from feet to meters */
+function lengthConverter(valNum) {
+  document.getElementById("outputMeters").innerHTML = valNum / 0.0022046;
+}
+  </script>
+  <h3> convert feet into cm</h3>
+  <p>
+    <label>Feet</label>
+    <input id="inputFeet" type="number" placeholder="Feet"
+    oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+  </p>
+  <p>cm: <span id="outputMeters"></span></p>
+  <script> /* When the input field receives input, convert the value from mph to kph */
+    function speedConverter(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputKPH").innerHTML = valNum * 1.609344;
+    }</script>
+    <h3> convert mph into KPH</h3>
+  <p>
+    <label>MPH</label>
+    <input id="inputMPH" type="number" placeholder="MPH"
+    oninput="speedConverter(this.value)"
+    onchange="speedConverter(this.value)">
+  </p>
+  <p>KPH: <span id="outputKPH"></span></p>
+</body>
+</html>
